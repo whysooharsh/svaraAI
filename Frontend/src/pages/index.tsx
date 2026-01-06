@@ -57,10 +57,11 @@ export default function Hero() {
 
         <motion.div style={{ scale, y }} className="bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg max-w-5xl mx-auto">
           <div className="relative w-full aspect-video overflow-hidden rounded-xl">
-            <img
-              src="https://res.cloudinary.com/dlvjrvhak/image/upload/v1767723466/3d-low-poly-abstract-background-with-shallow-depth-field_mz4uue.jpg"
-              alt="Svara AI"
-              className="absolute inset-0 w-full h-full object-cover rounded-xl"
+            <iframe
+              src="https://player.cloudinary.com/embed/?cloud_name=dlvjrvhak&public_id=cursorful-video-1767724479999_gpbe7r&profile=cld-default"
+              className="absolute inset-0 w-full h-full rounded-xl"
+              allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+              allowFullScreen
             />
           </div>
         </motion.div>
