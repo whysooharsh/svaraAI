@@ -7,7 +7,7 @@ import entriesRouter from './routes/entries';
 import geminiRouter from './routes/gemini';
 import humeRouter from './routes/hume';
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') });
+dotenv.config({ path: path.resolve(__dirname, '.env') });
 
 const app = express();
 const PORT = process.env.PORT || 5000;

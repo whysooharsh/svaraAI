@@ -4,11 +4,7 @@ import { motion } from "framer-motion";
 import type { CSSProperties } from "react";
 import * as R from "remeda";
 
-export default function Expressions({
-  values,
-}: {
-  values: Record<string, number>;
-}) {
+export default function Expressions({ values }: { values: Record<string, number> }) {
   const top3 = R.pipe(
     values,
     R.entries(),
@@ -31,23 +27,13 @@ export default function Expressions({
           </div>
           <div
             className="relative h-1"
-            style={
-              {
-                "--bg": expressionColors[key] ?? "#6b7280",
-              } as CSSProperties
-            }
+            style={{ "--bg": expressionColors[key] ?? "#6b7280" } as CSSProperties}
           >
             <div className="absolute top-0 left-0 size-full rounded-full opacity-10 bg-[var(--bg)]" />
             <motion.div
               className="absolute top-0 left-0 h-full bg-[var(--bg)] rounded-full"
               initial={{ width: 0 }}
-              animate={{
-                width: `${R.pipe(
-                  value,
-                  R.clamp({ min: 0, max: 1 }),
-                  (value: number) => `${value * 100}%`
-                )}`,
-              }}
+              animate={{ width: `${Math.min(1, Math.max(0, value)) * 100}%` }}
             />
           </div>
         </div>
